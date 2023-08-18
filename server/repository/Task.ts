@@ -9,9 +9,9 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-export const func = async (AAA: string) => {
+export const func = async (content: string) => {
   try {
-    const TODO_NAME = AAA;
+    const TODO_NAME = content;
     const getTask = () => {
       return TODO_NAME;
     };
@@ -21,7 +21,7 @@ export const func = async (AAA: string) => {
 
     const prompt: ChatCompletionRequestMessage = {
       role: 'user',
-      content: `${TODO_NAME}の技術を向上するために人が中々思いつかないTodoリストの内容を1つ10文字以内で具体的に教えてください 「」の中に答えを入れてください`,
+      content: `${TODO_NAME}の技術を向上するために人が中々思いつかないTodoリストの内容を1つ10文字以内で具体的に教えてください`,
     };
     console.log('a');
     const res = await openai.createChatCompletion({
