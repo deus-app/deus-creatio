@@ -15,7 +15,7 @@ export type TaskModel = {
   created: number;
 };
 
-export type RoomModel = {
-  board: BoardArr;
-  turn: number;
+export type TrendModel = {
+  isHashtag: boolean;
+  word: string;
 };
